@@ -14,6 +14,7 @@ Copy code
 
 import csv
 
+
 def read_and_process_csv(file_path: str) -> None:
     """Read CSV and calculate average"""
     total_grade = 0
@@ -36,9 +37,10 @@ def add_student(file_path: str, name: str, age: int, grade: int) -> None:
         writer.writerow([name, age, grade])
     print(f"Додано студента з іменем -- {name}. Вік -- {age}. Оцінка -- {grade}")
 
+
 if __name__ == "__main__":
     file_path = "students.csv"
-    add_student(file_path, "Петро",21,90)
-    add_student(file_path, "Марина",22,85)
-    add_student(file_path, "Андрій",20,88)
+    add_student(file_path, "Петро", 21, 90)
+    add_student(file_path, "Марина", 22, 85)
+    add_student(file_path, "Андрій", 20, 88)
     read_and_process_csv(file_path)
