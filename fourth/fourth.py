@@ -13,8 +13,8 @@ Copy code
 Виводить список доступних книг (наявність True).
 Додає нову книгу в цей файл."""
 
-
 import json
+
 
 def load_and_filter_books(file_path: str) -> None:
     """Load JSON and list available books"""
@@ -25,6 +25,7 @@ def load_and_filter_books(file_path: str) -> None:
     for book in available_books:
         print(f"- {book['назва']}. Автор -- {book['автор']}")
 
+
 def add_book(file_path: str, title: str, author: str, year: int, available: bool) -> None:
     """Add new book to JSON"""
     with open(file_path, 'r+', encoding='utf-8') as f:
@@ -33,6 +34,7 @@ def add_book(file_path: str, title: str, author: str, year: int, available: bool
         f.seek(0)
         json.dump(books, f, indent=4, ensure_ascii=False)
     print(f"Додано книгу -- {title}, Автор -- {author}")
+
 
 if __name__ == "__main__":
     file_path = "books.json"
