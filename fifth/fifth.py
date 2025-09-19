@@ -22,6 +22,7 @@ Copy code
 
 import xml.etree.ElementTree as ET
 
+
 def read_and_display_products(file_path: str) -> None:
     """Read XML and display product names and quantities"""
     tree = ET.parse(file_path)
@@ -32,6 +33,7 @@ def read_and_display_products(file_path: str) -> None:
         quantity = product.find('quantity').text
         print(f"- {name}: {quantity}")
 
+
 def update_product_quantity(file_path: str, product_name: str, new_quantity: int) -> None:
     tree = ET.parse(file_path)
     root = tree.getroot()
@@ -41,6 +43,7 @@ def update_product_quantity(file_path: str, product_name: str, new_quantity: int
             break
     tree.write(file_path)
     print(f"Було оновлено к-сть {product_name} до {new_quantity}")
+
 
 if __name__ == "__main__":
     file_path = "products.xml"
